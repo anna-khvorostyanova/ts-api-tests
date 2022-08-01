@@ -1,4 +1,3 @@
-import { AccountBaseControllerResponse } from './../api-models/account.response';
 import { ApiController } from '../../../api/api-controller';
 import { PostImageControllerResponse } from '../api-models/image.response';
 

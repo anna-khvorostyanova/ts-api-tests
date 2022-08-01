@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import config from 'config';
-import FormData from 'axios';
 import { ImageController } from '../../src/module/imgur/controller/image.controller';
 const TOKEN: string = config.get('authorization');
 let imageId: string = "";
@@ -23,13 +22,15 @@ const imageAsText = {
 const imageAsFile = {
     content: config.get('testData.images.file')
 }
+
 test('push image as url', async () => {
-    const postImageResponse = await ImageController.postImage( imageByUrl.url, TOKEN);
+    const postImageResponse = await ImageController.postImage(imageByUrl.url, TOKEN);
     console.log(postImageResponse.body);
     expect(postImageResponse.status).toEqual(200);
     expect(postImageResponse.body.status).toEqual(200);
+    expect(postImageResponse.body.success).toEqual(true);
     expect(postImageResponse.body.data.type).toEqual(imageByUrl.type);
-
+    expect(postImageResponse.body.data.height).toBe(imageByUrl.height);
     imageId = postImageResponse.body.data.deletehash;
 
   });
@@ -44,6 +45,8 @@ test('push image as url', async () => {
   });
 
   test.afterEach(async () => {
-    const deleteImageResponse = await ImageController.deleteImage(imageId, TOKEN);
-    expect(deleteImageResponse.status).toEqual(200);
+    if (imageId != "") {
+        const deleteImageResponse = await ImageController.deleteImage(imageId, TOKEN);
+        expect(deleteImageResponse.status).toEqual(200);
+    }
   });

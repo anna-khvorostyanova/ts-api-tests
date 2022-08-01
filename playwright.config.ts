@@ -40,7 +40,6 @@ const config: PlaywrightTestConfig = {
     extraHTTPHeaders: {
       // Add authorization token to all requests.
       // Assuming personal access token available in the environment.
-      'Authorization': `Bearer 134d859012dc89de8c593af057eaff2bbd567488`,
     },
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
