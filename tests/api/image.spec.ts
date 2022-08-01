@@ -23,6 +23,7 @@ const imageAsFile = {
     content: config.get('testData.images.file')
 }
 
+
 test('push image as url', async () => {
     const postImageResponse = await ImageController.postImage(imageByUrl.url, TOKEN);
     console.log(postImageResponse.body);
