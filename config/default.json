@@ -1,6 +1,28 @@
 {
     "apiUrl": "https://api.imgur.com/3/",
     "authorization": "Bearer 134d859012dc89de8c593af057eaff2bbd567488",
+    "baseUrl": "https://imgur.com/",
+    "username": "testprogmath",
+    "password": "password123456",
+    "chromiumOptions": {
+        "timeout": 5000,
+        "devtools": false,
+        "args": [
+            "--disable-dev-shm-usage",
+            "--shm-size=2gb",
+            "--disable-gpu",
+            "--disable-web-security",
+            "--disable-user-media-security",
+            "--disable-settings-window",
+            "--disable-restore-session-state",
+            "--disable-session-crashed-bubble",
+            "--autoplay-policy=no-user-gesture-required",
+            "--use-fake-ui-for-media-stream",
+            "--use-fake-device-for-media-stream",
+            "--allow-file-access-from-files",
+            "--disable-translate"
+        ]
+    }, 
     "testData": {
         "images": {
             "file": "resources/download.png",
