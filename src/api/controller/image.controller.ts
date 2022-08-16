@@ -1,4 +1,4 @@
-import { ApiController } from '../../../api/api-controller';
+import { ApiController } from '../api-controller';
 import { PostImageControllerResponse } from '../api-models/image.response';
 
 export class ImageController extends ApiController {

@@ -1,4 +1,4 @@
-import { ApiResponse } from '../../../api/request-interfaces.d';
+import { ApiResponse } from '../request-interfaces';
 
 export interface PostImageControllerResponseBody {
     data: Data;
